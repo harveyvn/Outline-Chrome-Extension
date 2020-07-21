@@ -1,5 +1,5 @@
 {
-	"name": "Outline Chromimum Extension",
+	"name": "Outline Chromium Extension",
 	"version": "1.0",
 	"description": "Build a Chromium Extension for Outline Service!",
 	"permissions": ["activeTab", "storage", "contextMenus"],

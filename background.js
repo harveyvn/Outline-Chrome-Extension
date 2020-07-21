@@ -4,13 +4,23 @@
 
 'use strict';
 
-const mode = window.matchMedia("(prefers-color-scheme: dark)");
-console.log(mode);
+var contextMenuItem = {
+	"id": "outlineContextMenu",
+	"title": "Go to Outline",
+	"contexts": ["all"]
+};
 
-chrome.browserAction.onClicked.addListener(function(tab) {
-	var tabUrl = tab.url;
+function goToOutline(tabUrl) {
 	var outlineUrl = 'http://outline.com/' + tabUrl;
 	window.open(outlineUrl);
+}
+
+chrome.runtime.onInstalled.addListener(function() {
+	chrome.contextMenus.create(contextMenuItem);
+});
+
+chrome.browserAction.onClicked.addListener(function(tab) {
+	goToOutline(tab.url);
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
@@ -32,4 +42,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		});
 	}
 	sendResponse({farewell: ""});
+});
+
+chrome.contextMenus.onClicked.addListener(function(tab) {
+	goToOutline(tab.pageUrl);
 });

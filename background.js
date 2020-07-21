@@ -4,6 +4,9 @@
 
 'use strict';
 
+const mode = window.matchMedia("(prefers-color-scheme: dark)");
+console.log(mode);
+
 chrome.browserAction.onClicked.addListener(function(tab) {
 	var tabUrl = tab.url;
 	var outlineUrl = 'http://outline.com/' + tabUrl;
@@ -14,19 +17,19 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	if (request.scheme == "dark") {
 		chrome.browserAction.setIcon({
 			path: {
-				"16": "images/icon.png",
-				"32": "images/icon.png",
-				"48": "images/icon.png"
+				"16": "images/dark.png",
+				"32": "images/dark.png",
+				"48": "images/dark.png"
 			}
 		});
 	} else {
 		chrome.browserAction.setIcon({
 			path: {
-				"16": "images/get_started16.png",
-				"32": "images/get_started32.png",
-				"48": "images/get_started48.png"
+				"16": "images/light.png",
+				"32": "images/light.png",
+				"48": "images/light.png"
 			}
 		});
 	}
-	sendResponse({farewell: "background.js got a message"});
+	sendResponse({farewell: ""});
 });

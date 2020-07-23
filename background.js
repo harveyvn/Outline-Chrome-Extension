@@ -15,16 +15,8 @@ function goToOutline(tabUrl) {
 	window.open(outlineUrl);
 }
 
-chrome.runtime.onInstalled.addListener(function() {
-	chrome.contextMenus.create(contextMenuItem);
-});
-
-chrome.browserAction.onClicked.addListener(function(tab) {
-	goToOutline(tab.url);
-});
-
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-	if (request.scheme == "dark") {
+function toggleIcon(scheme) {
+	if (scheme == "dark") {
 		chrome.browserAction.setIcon({
 			path: {
 				"16": "images/dark.png",
@@ -41,6 +33,18 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 			}
 		});
 	}
+}
+
+chrome.runtime.onInstalled.addListener(function() {
+	chrome.contextMenus.create(contextMenuItem);
+});
+
+chrome.browserAction.onClicked.addListener(function(tab) {
+	goToOutline(tab.url);
+});
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+	toggleIcon(request.scheme);
 	sendResponse({farewell: ""});
 });
 

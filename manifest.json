@@ -9,9 +9,9 @@
 	},
 	"browser_action": {
 		"default_icon": {
-			"16": "images/light.png",
-			"32": "images/light.png",
-			"48": "images/light.png"
+			"16": "images/dark.png",
+			"32": "images/dark.png",
+			"48": "images/dark.png"
 		},
 		"default_title": "Outline"
 	},
@@ -22,9 +22,9 @@
 		}
 	],
 	"icons": {
-		"16": "images/light.png",
-		"32": "images/light.png",
-		"48": "images/light.png"
+		"16": "images/dark.png",
+		"32": "images/dark.png",
+		"48": "images/dark.png"
 	},
 	"options_page": "options.html",
 	"manifest_version": 2

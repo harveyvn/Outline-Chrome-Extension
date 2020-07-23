@@ -18,7 +18,7 @@
 	"content_scripts": [
 		{
 			"matches": ["http://*/*", "https://*/*"],
-			"js": ["toggleIcon.js"]
+			"js": ["toggleIcon.js", "outline.js"]
 		}
 	],
 	"icons": {

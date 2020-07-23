@@ -13,6 +13,12 @@ let contextMenu = document.getElementById("contextMenu");
 
 contextMenu.addEventListener('click', function() {
 	chrome.storage.local.set({hideContextMenu: contextMenu.checked}, function() {
-	  console.log('Value is set to ' + contextMenu.checked);
+		// console.log('Value is set to ' + contextMenu.checked);
+	});
+
+
+	chrome.runtime.sendMessage({
+		command: "hideContextMenu",
+		value: contextMenu.checked
 	});
 });

@@ -4,7 +4,7 @@
 
 'use strict';
 
-var contextMenuItem = {
+const contextMenuItem = {
 	"id": "outlineContextMenu",
 	"title": "Go to Outline",
 	"contexts": ["all"]
@@ -35,8 +35,28 @@ function toggleIcon(scheme) {
 	}
 }
 
+function onChangedSettings(request) {
+	switch(request.command) {
+		case "toggleIcon":
+			toggleIcon(request.scheme);
+			break;
+		case "hideContextMenu":
+			if (request.value) {
+				chrome.contextMenus.remove("outlineContextMenu");
+			} else {
+				chrome.contextMenus.create(contextMenuItem);
+			}
+			break;
+		default:
+			console.log(request.command + " is undefined!");
+	}
+}
+
 chrome.runtime.onInstalled.addListener(function() {
 	chrome.contextMenus.create(contextMenuItem);
+	chrome.contextMenus.onClicked.addListener(function(tab) {
+		goToOutline(tab.pageUrl);
+	});
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
@@ -44,12 +64,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-	toggleIcon(request.scheme);
-	sendResponse({farewell: ""});
-});
-
-chrome.contextMenus.onClicked.addListener(function(tab) {
-	goToOutline(tab.pageUrl);
+	onChangedSettings(request);
 });
 
 chrome.storage.onChanged.addListener(function(changes, namespace) {

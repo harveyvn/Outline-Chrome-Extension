@@ -4,3 +4,15 @@
 
 'use strict';
 
+chrome.storage.local.get(['hideContextMenu'], function(result) {
+	document.getElementById("contextMenu").checked = result.hideContextMenu;
+});
+
+
+let contextMenu = document.getElementById("contextMenu");
+
+contextMenu.addEventListener('click', function() {
+	chrome.storage.local.set({hideContextMenu: contextMenu.checked}, function() {
+	  console.log('Value is set to ' + contextMenu.checked);
+	});
+});

@@ -14,7 +14,8 @@ img {
 	margin: 0 auto 10px;
 	display: block;
 	border-radius: 5px;
-	width: 100%;
+	width: auto;
+	height: 350px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Lora|Playfair+Display:700i,900');

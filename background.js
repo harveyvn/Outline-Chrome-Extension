@@ -54,9 +54,10 @@ function onChangedSettings(request) {
 
 chrome.runtime.onInstalled.addListener(function() {
 	chrome.contextMenus.create(contextMenuItem);
-	chrome.contextMenus.onClicked.addListener(function(tab) {
-		goToOutline(tab.pageUrl);
-	});
+});
+
+chrome.contextMenus.onClicked.addListener(function(tab) {
+	goToOutline(tab.pageUrl);
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {

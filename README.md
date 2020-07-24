@@ -2,7 +2,7 @@
 
 I got sick of reading paywall on my favorite articles so I create this extension to do a copy and paste of the current tab URL into the Outline.com.
 
-[![Watch the video](https://p142.p3.n0.cdn.getcloudapp.com/items/8Lu78jmd/Screen%20Recording%202020-07-21%20at%2008.21.05%20PM.gif?)](https://p142.p3.n0.cdn.getcloudapp.com/items/8Lu78jmd/Screen%20Recording%202020-07-21%20at%2008.21.05%20PM.gif?)
+[![Watch the video](https://p142.p3.n0.cdn.getcloudapp.com/items/6qu2jGz9/Screen%20Recording%202020-07-23%20at%2011.22.31%20PM.gif)](https://p142.p3.n0.cdn.getcloudapp.com/items/6qu2jGz9/Screen%20Recording%202020-07-23%20at%2011.22.31%20PM.gif)
 
 ## Installation
 

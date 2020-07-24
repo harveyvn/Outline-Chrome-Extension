@@ -6,7 +6,7 @@
 }
 
 .yue {
-	max-width: 50% !important;
+	max-width: 60% !important;
 	margin-bottom: 100px !important;
 }
 
@@ -37,31 +37,39 @@ a,
 	text-rendering: optimizeLegibility;
 }
 
-h1 {
+h1, h2, h3, h4, p, i, a, li {
 	font-family: nyt-imperial,georgia,times new roman,times,serif;
-	font-size: 48px;
-	margin-bottom: 8px;
-	text-align: center;
-	font-weight: normal;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: 400;
 }
 
 h2 {
-	font-family: nyt-imperial,georgia,times new roman,times,serif;
-	font-size: 26px;
-	font-weight: 700;
-	padding: 0;
-	margin: 56px 0 -13px -1.883px;
-	text-align: left;
-	line-height: 34.5px;
-	letter-spacing: -0.45px;
+    font-size: 26px;
+    font-weight: 500;
+    padding: 0;
+    text-align: left;
+    line-height: 40px;
+}
+
+h3, h3 a {
+    font-size: 1.45em;
+}
+
+h4, h4 a {
+	font-size: 1.25rem;
 }
 
 p, i, a, .author {
 	margin-top: 21px;
 	font-family: nyt-imperial,georgia,times new roman,times,serif;
-	font-size: 1.25rem;
-	line-height: 1.875rem;
-	text-align: justify;
+	font-size: 1.16rem;
+    line-height: 1.86rem;
+    text-align: justify;
 }
 
 a {
@@ -87,6 +95,15 @@ code {
 	background: rgba(0,0,0,.05);
 	border-radius: 2px;
 	padding: 3px 5px;
+}
+
+li, li a {
+	font-size: 15px;
+    line-height: 23px;
+}
+
+li {
+	margin-bottom: 2px;
 }
 
 .highlighted {
@@ -322,4 +339,18 @@ code {
 	text-align: center;
 	margin-top: 0;
 	font-size: 12px;
+}
+
+figure {
+	text-align: center;
+}
+
+figure, figcaption, figcaption a {
+	font-family: nyt-imperial,georgia,times new roman,times,serif;
+    font-size: 13px;
+    line-height: 19px;
+}
+
+figure, figcaption {
+	color: #676666;
 }
